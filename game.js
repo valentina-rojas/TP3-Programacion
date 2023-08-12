@@ -24,7 +24,7 @@ export default class Game extends Phaser.Scene {
 
     this.pelota = this.physics.add
       .image(400, 100, "pelota")
-      .setVelocity(100, 200)
+      .setVelocity(50, 100)
       .setBounce(1, 1)
       .setScale(0.07)
       .setCollideWorldBounds(true);
@@ -83,7 +83,13 @@ export default class Game extends Phaser.Scene {
 
     this.nivelTexto.setText("Nivel " + this.nivel);
 
+    this.color = Phaser.Display.Color.RandomRGB().color;
+    this.cameras.main.setBackgroundColor(this.color);
+
     this.agregarObstaculo();
+
+    this.pelota.setVelocityX(this.pelota.body.velocity.x * 1.1);
+    this.pelota.setVelocityY(this.pelota.body.velocity.y * 1.1);
   }
 
   agregarObstaculo() {
