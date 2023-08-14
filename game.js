@@ -98,7 +98,7 @@ export default class Game extends Phaser.Scene {
     // console.log("Puntos:" + this.puntos)
     this.cantidadPuntosTexto.setText("Puntos: " + this.puntos);
 
-    if (this.choques >= 3) {
+    if (this.choques >= 10) {
       this.pasarNivel();
     }
   }
